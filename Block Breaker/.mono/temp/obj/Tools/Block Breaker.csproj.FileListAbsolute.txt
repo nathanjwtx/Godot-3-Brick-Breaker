@@ -1,0 +1,6 @@
+C:\Users\Nathan - User\OneDrive\Godot\Brick Breaker Godot 3\Block Breaker\.mono\temp\bin\Tools\Block Breaker.dll
+C:\Users\Nathan - User\OneDrive\Godot\Brick Breaker Godot 3\Block Breaker\.mono\temp\bin\Tools\Block Breaker.pdb
+C:\Users\Nathan - User\OneDrive\Godot\Brick Breaker Godot 3\Block Breaker\.mono\temp\obj\Tools\Block Breaker.csprojResolveAssemblyReference.cache
+C:\Users\Nathan - User\OneDrive\Godot\Brick Breaker Godot 3\Block Breaker\.mono\temp\obj\Tools\Block Breaker.csproj.CoreCompileInputs.cache
+C:\Users\Nathan - User\OneDrive\Godot\Brick Breaker Godot 3\Block Breaker\.mono\temp\obj\Tools\Block Breaker.dll
+C:\Users\Nathan - User\OneDrive\Godot\Brick Breaker Godot 3\Block Breaker\.mono\temp\obj\Tools\Block Breaker.pdb
