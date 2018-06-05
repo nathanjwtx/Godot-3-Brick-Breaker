@@ -109,7 +109,6 @@ polygon = PoolVector2Array( 0, 384, -64, 384, -64, -64, 704, -64, 704, 416, 640,
 
 [node name="Bricks" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
 script = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
@@ -124,7 +123,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Pickable", "Transform" ]
+_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="Bricks/Brick" index="0"]
 

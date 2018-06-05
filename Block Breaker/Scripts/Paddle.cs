@@ -15,8 +15,6 @@ public class Paddle : KinematicBody2D
     {
         var y = Position.y;
         var x = GetViewport().GetMousePosition().x;
-        System.Console.WriteLine(y);
-        System.Console.WriteLine(x);
         var position = new Vector2(x, y);
         SetPosition(position);
     }
