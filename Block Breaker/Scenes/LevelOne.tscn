@@ -27,7 +27,7 @@ _sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index"
 
 [node name="Paddle" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( 320, 320 )
+position = Vector2( 400, 510 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -50,10 +50,18 @@ position = Vector2( -0.00257182, -0.2641 )
 scale = Vector2( 4.92287, 0.977992 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Anchor" type="Position2D" parent="Paddle" index="2"]
+
+position = Vector2( 0, 32 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Ball" type="RigidBody2D" parent="." index="1"]
 
-position = Vector2( 320, 300 )
+position = Vector2( 400, 490 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -61,7 +69,7 @@ mode = 2
 mass = 1.0
 friction = 0.0
 bounce = 1.0
-gravity_scale = 0.0
+gravity_scale = 0.1
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 1
@@ -101,20 +109,24 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Transform" ]
 
 [node name="Collision" type="CollisionPolygon2D" parent="Walls" index="0"]
 
+position = Vector2( 0.116699, 61.3828 )
+scale = Vector2( 1.05339, 1.35129 )
 build_mode = 0
-polygon = PoolVector2Array( 0, 384, -64, 384, -64, -64, 704, -64, 704, 416, 640, 416, 640, 0, 0, 0 )
+polygon = PoolVector2Array( -0.110785, 398.594, -66.5632, 398.594, -66.5632, -97.2274, 825.798, -97.2274, 825.798, 398.594, 759.345, 398.594, 759.345, -45.4252, -0.110785, -45.4252 )
 
 [node name="Bricks" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
+position = Vector2( 60, 80 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Brick" type="StaticBody2D" parent="Bricks" index="0"]
 
-editor/display_folded = true
 position = Vector2( 96, 64 )
 input_pickable = false
 collision_layer = 1
@@ -123,7 +135,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-_sections_unfolded = [ "Collision", "Pickable", "Transform" ]
+_sections_unfolded = [ "Pickable", "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="Bricks/Brick" index="0"]
 
@@ -383,5 +395,24 @@ _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
+
+position = Vector2( 397, 652 )
+scale = Vector2( 14.7813, 1.1875 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Lose Collision" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+
+position = Vector2( -0.0673828, 3.8147e-06 )
+scale = Vector2( 0.99867, 1 )
+build_mode = 0
+polygon = PoolVector2Array( -10.6216, 15.1579, -31.5941, 15.1579, -31.5941, -43.7895, 32, -43.7895, 32, 15.1579 )
 
 

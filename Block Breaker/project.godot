@@ -14,6 +14,10 @@ config/name="Block Breaker"
 run/main_scene="res://Scenes/LevelOne.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=800
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

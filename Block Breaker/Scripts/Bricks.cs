@@ -1,5 +1,4 @@
 using Godot;
-using static Godot.GD;
 using System;
 
 public class Bricks : Node2D
@@ -10,10 +9,13 @@ public class Bricks : Node2D
 
     public override void _Ready()
     {
-        var b = GetChildren();
-        foreach (var brick in b)
+        // Called every time the node is added to the scene.
+        // Initialization here
+        var count = 0;
+        foreach (Node brick in GetChildren())
         {
-            AddToGroup("_Bricks");
+            count += 1;
+            brick.AddToGroup("Bricks");
         }
     }
 

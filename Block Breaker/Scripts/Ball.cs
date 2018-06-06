@@ -1,9 +1,12 @@
 using Godot;
-using System;
 using static Godot.GD;
+using System;
 
 public class Ball : RigidBody2D
 {
+
+    const int SpeedUp = 4;
+    const int MaxSpeed = 200;
 
     public override void _Ready()
     {
@@ -14,23 +17,28 @@ public class Ball : RigidBody2D
 
     public override void _PhysicsProcess(float delta)
     {
-        ContactMonitor = true;
+        const int multipler = 100;
         var bodies = GetCollidingBodies();
-        var hits = this.ContactsReported;
-        // Print(GetTree().HasGroup("_Bricks"));
-        // Print(GetTree().GetNodesInGroup("_Bricks"));
-        
+    
         foreach (var body in bodies)
         {
-            if (IsInGroup("_Bricks"))
+            var b = body as Node;
+            if (b.IsInGroup("Bricks"))
             {
-                Print("Yes");
-                QueueFree();
+                b.QueueFree();
             }
-            // else
-            // {
-            //     Print("No");
-            // }
+
+            if (b.GetName() == "Paddle")
+            {
+                var anchor = (Node2D) b.GetNode("Anchor");
+                var speed = GetLinearVelocity().Length();
+                var direction = GetPosition() - anchor.GlobalPosition;
+                
+                var velocity = direction.Normalized() * Math.Min(speed + SpeedUp * delta * multipler, 
+                                   MaxSpeed * delta * multipler);
+//                Print(velocity);
+                LinearVelocity = velocity;
+            }
         }
     }
 }
